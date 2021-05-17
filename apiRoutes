@@ -1,0 +1,84 @@
+------------------Quize-------------------------
+
+1) Create Quize  -
+  route - '/quize'
+  type - POST
+  body parameters - { "name": "name of the quize"}
+
+
+2) Get All Quize  -
+  route - '/quize'
+  type - GET
+  body parameters - { "None" }
+
+
+3) Single Quize Details  -
+  route - '/quize/:quizeId'
+  type - GET
+  body parameters - {"None"}
+
+
+
+--------quizeQuestion--------------
+
+4) Add Question  -
+  route - '/question'
+  type - POST
+  body parameters - {
+      "questionText":"",
+      "quizeId": ref Quize,
+      "options": [{
+        "1":" ",
+        "2":" ",
+        "3":" ",
+        "4":" "
+        },{"correctAnswer":" "}],
+      "questionMarks":"",
+      "isCorrect":"false"
+  }
+
+5) get All Questions - 
+  route - '/question'
+  type -GET
+  body parameters - {"None"}
+
+6) get single Question -
+  route - 'question/:questionId'
+  type -GET
+  body parameters -{"None"}
+
+7) question By Quize -
+  route - 'question/:quizeId'
+  type -GET
+  body parameters -{"None"}
+
+
+--------------Answer --------------------------------
+
+8) Add Answer - 
+  route - '/answer'
+  type - POST
+  body parameters - {
+      "selectedOptions":"",
+      "questionId":"",
+      "quizeId":""
+  }
+
+9) Update Answer -
+  route - '/answer/:answerId'
+  type - PUT
+  body parameters -{"selectedOptions":""}
+
+--------------Marks Calculation-------------------
+10) Question wise Marks - 
+  route - '/answer/marks'
+  type - GET
+  params - {
+      "answerId":"",
+      "questionId":""
+  }
+
+11) Quize Wise Marks -
+  route - '/question/total-marks/:quizeId'
+  type - GET
+  body parameters -{"None"}
